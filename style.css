@@ -1,196 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. Bigshot's TV TIME!</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+/* General Page Styles */
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: 'Roboto', Arial, sans-serif;
-      background: #001a33;
-      color: #ffeb3b;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-    }
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #001a33; /* Dark blue background */
+  color: #ffeb3b;       /* Bright yellow text */
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
 
-    header {
-      background: #d50000;
-      padding: 20px;
-      margin-bottom: 30px;
-    }
+/* Header */
+header {
+  background: #d50000; /* Red */
+  padding: 20px;
+  margin-bottom: 30px;
+}
 
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      margin: 0;
-      font-size: 3rem;
-      color: #ff80ab;
-      letter-spacing: 2px;
-    }
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  font-size: 3rem;
+  color: #ff80ab; /* Pink */
+  letter-spacing: 2px;
+}
 
-    nav {
-      margin-top: 15px;
-    }
+/* Navigation Menu */
+nav {
+  margin-top: 15px;
+}
 
-    nav a {
-      color: #ffeb3b;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 1px;
-    }
+nav a {
+  color: #ffeb3b; /* Yellow */
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
 
-    nav a:hover {
-      text-decoration: underline;
-      color: #ff80ab;
-    }
+nav a:hover {
+  text-decoration: underline;
+  color: #ff80ab; /* Pink on hover */
+}
 
-    section {
-      margin: 60px auto;
-      max-width: 800px;
-      padding: 20px;
-      background: #2962ff;
-      border-radius: 12px;
-    }
+/* Sections */
+section {
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 20px;
+  background: #2962ff; /* Blue */
+  border-radius: 12px;
+}
 
-    #hero {
-      background: #2962ff;
-      font-family: 'Orbitron', sans-serif;
-    }
+#hero {
+  background: #2962ff;
+  font-family: 'Orbitron', sans-serif;
+}
 
-    footer {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #ff80ab;
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 1px;
-    }
+/* Footer */
+footer {
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #ff80ab;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
 
-    /* License card style */
-    .license-card {
-      background: #b71c1c;
-      border: 3px solid #ffeb3b;
-      border-radius: 15px;
-      color: #ffeb3b;
-      width: 320px;
-      margin: 20px auto;
-      padding: 20px;
-      font-family: 'Orbitron', sans-serif;
-      box-shadow: 0 0 20px #ff80abaa;
-      letter-spacing: 1px;
-    }
+/* License Card */
+.license-card {
+  background: #b71c1c; /* Dark red */
+  border: 3px solid #ffeb3b; /* Yellow border */
+  border-radius: 15px;
+  color: #ffeb3b;
+  width: 320px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 0 20px #ff80abaa;
+  letter-spacing: 1px;
+}
 
-    input[type="text"] {
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      width: 200px;
-      font-size: 1rem;
-      margin-top: 10px;
-      font-family: 'Roboto', Arial, sans-serif;
-    }
+/* Input and Button */
+input[type="text"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 200px;
+  font-size: 1rem;
+  margin-top: 10px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
 
-    button {
-      padding: 10px 15px;
-      margin-left: 10px;
-      border: none;
-      border-radius: 8px;
-      background: #ffeb3b;
-      color: #b71c1c;
-      font-weight: bold;
-      cursor: pointer;
-      font-family: 'Orbitron', sans-serif;
-      letter-spacing: 1px;
-    }
+button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #ffeb3b;
+  color: #b71c1c;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
 
-    button:hover {
-      background: #fdd835;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Dr. Bigshot's TV TIME!</h1>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#license">TV TIME License</a>
-      <a href="#signup">Contestants</a>
-    </nav>
-  </header>
-
-  <section id="hero">
-    <h2>Welcome to the craziest TV show in town!</h2>
-    <p>Get ready for fun, madness, and TV Time with Dr. Bigshot!</p>
-  </section>
-
- <section id="signup">
-  <h2>Click the link below to sign up for a chance to be on an episode of my show!</h2>
-  <p><a href="https://forms.gle/6sneUmpxGdBfWokZ7" target="_blank">Click here to sign up via Google Form</a></p>
-</section>
-
-  <section id="about">
-    <h2>About the Show</h2>
-    <p>Dr. Bigshot brings you the wildest and weirdest TV experience inspired by Mr. Antenna TV Time!</p>
-  </section>
-
-  <section id="license">
-    <h2>Your Official TV TIME License</h2>
-    <p>Congratulations! You are now an official fan of Dr. Bigshot's TV TIME!</p>
-
-    <div class="license-card">
-      <h3>Dr. Bigshot's TV TIME License</h3>
-      <p><strong>Name:</strong> <span id="fan-name">[Your Name Here]</span></p>
-      <p><strong>License ID:</strong> <span id="license-id">#000123</span></p>
-      <p><em>Issued: June 2025</em></p>
-      <p>Welcome to the craziest TV fan club around!</p>
-    </div>
-
-    <label for="name-input">Enter your name to personalize your license:</label><br />
-    <input type="text" id="name-input" placeholder="Your Name" />
-    <button id="generate-license">Generate License</button>
-
-    <br /><br />
-    <a id="download-license" href="#" download="tv-time-license.png" style="display:none;">Download License Image</a>
-  </section>
-
-  <footer>
-    <p>© 2025 Dr. Bigshot's TV TIME! All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script>
-    const nameInput = document.getElementById('name-input');
-    const fanName = document.getElementById('fan-name');
-    const licenseId = document.getElementById('license-id');
-    const generateBtn = document.getElementById('generate-license');
-    const downloadLink = document.getElementById('download-license');
-
-    function generateRandomId() {
-      return '#' + Math.floor(100000 + Math.random() * 900000);
-    }
-
-    generateBtn.addEventListener('click', () => {
-      const name = nameInput.value.trim();
-      if (name === '') {
-        alert('Please enter your name to generate your license!');
-        return;
-      }
-      fanName.textContent = name;
-      licenseId.textContent = generateRandomId();
-      downloadLink.style.display = 'inline-block';
-
-      html2canvas(document.querySelector('.license-card')).then(canvas => {
-        downloadLink.href = canvas.toDataURL('image/png');
-      });
-    });
-  </script>
-</body>
-</html>
+button:hover {
+  background: #fdd835;
+}
