@@ -4,20 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dr. Bigshot's TV TIME!</title>
-  <!-- Google Fonts: Orbitron for headings, Roboto for body -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Roboto', Arial, sans-serif;
-      background: #001a33;       /* dark blue background */
-      color: #ffeb3b;            /* bright yellow text */
+      background: #001a33;
+      color: #ffeb3b;
       text-align: center;
       margin: 0;
       padding: 20px;
     }
 
     header {
-      background: #d50000;       /* vivid red header */
+      background: #d50000;
       padding: 20px;
       margin-bottom: 30px;
     }
@@ -26,64 +29,61 @@
       font-family: 'Orbitron', sans-serif;
       margin: 0;
       font-size: 3rem;
-      color: #ff80ab;            /* pinkish text */
+      color: #ff80ab;
       letter-spacing: 2px;
     }
 
+    nav {
+      margin-top: 15px;
+    }
+
     nav a {
-      color: #ffeb3b;            /* bright yellow links */
+      color: #ffeb3b;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      cursor: pointer;
       font-size: 1.1rem;
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
+
     nav a:hover {
       text-decoration: underline;
-    }
-    nav a.active {
-      text-decoration: underline;
-      font-weight: bold;
-      color: #ff80ab;            /* pink for active tab */
+      color: #ff80ab;
     }
 
     section {
-      display: none;
-      margin-bottom: 40px;
-    }
-    section#hero {
-      display: block; /* Show Home by default */
+      margin: 60px auto;
+      max-width: 800px;
+      padding: 20px;
+      background: #2962ff;
+      border-radius: 12px;
     }
 
     #hero {
-      background: #2962ff;       /* bright blue background */
-      padding: 40px 20px;
-      border-radius: 10px;
+      background: #2962ff;
       font-family: 'Orbitron', sans-serif;
-      letter-spacing: 1px;
     }
 
     footer {
       margin-top: 50px;
       font-size: 0.9rem;
-      color: #ff80ab;            /* pink footer text */
+      color: #ff80ab;
       font-family: 'Orbitron', sans-serif;
       letter-spacing: 1px;
     }
 
     /* License card style */
     .license-card {
-      background: #b71c1c;       /* deep red background */
-      border: 3px solid #ffeb3b; /* bright yellow border */
+      background: #b71c1c;
+      border: 3px solid #ffeb3b;
       border-radius: 15px;
-      color: #ffeb3b;            /* yellow text */
+      color: #ffeb3b;
       width: 320px;
       margin: 20px auto;
       padding: 20px;
       font-family: 'Orbitron', sans-serif;
-      box-shadow: 0 0 20px #ff80abaa;  /* pink glow */
+      box-shadow: 0 0 20px #ff80abaa;
       letter-spacing: 1px;
     }
 
@@ -102,8 +102,8 @@
       margin-left: 10px;
       border: none;
       border-radius: 8px;
-      background: #ffeb3b;         /* bright yellow */
-      color: #b71c1c;              /* deep red text */
+      background: #ffeb3b;
+      color: #b71c1c;
       font-weight: bold;
       cursor: pointer;
       font-family: 'Orbitron', sans-serif;
@@ -111,7 +111,7 @@
     }
 
     button:hover {
-      background: #fdd835;         /* darker yellow on hover */
+      background: #fdd835;
     }
   </style>
 </head>
@@ -119,10 +119,10 @@
   <header>
     <h1>Dr. Bigshot's TV TIME!</h1>
     <nav>
-      <a href="#" class="tab-link active" data-section="hero">Home</a>
-      <a href="#" class="tab-link" data-section="about">About</a>
-      <a href="#" class="tab-link" data-section="license">TV TIME License</a>
-      <a href="https://forms.gle/wcy9zrzeZLLkbHXX7" target="_blank" rel="noopener noreferrer" id="contestants-link">Contestants</a>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#license">TV TIME License</a>
+      <a href="https://forms.gle/wcy9zrzeZLLkbHXX7" target="_blank" rel="noopener noreferrer">Contestants</a>
     </nav>
   </header>
 
@@ -162,29 +162,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script>
-    // Tab switching logic
-    const tabs = document.querySelectorAll('.tab-link');
-    const sections = document.querySelectorAll('section');
-
-    function showSection(id) {
-      sections.forEach(section => {
-        section.style.display = (section.id === id) ? 'block' : 'none';
-      });
-    }
-
-    tabs.forEach(tab => {
-      // Skip the Contestants link since it's an external link
-      if (tab.id === 'contestants-link') return;
-
-      tab.addEventListener('click', e => {
-        e.preventDefault();
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        showSection(tab.getAttribute('data-section'));
-      });
-    });
-
-    // License generator logic
     const nameInput = document.getElementById('name-input');
     const fanName = document.getElementById('fan-name');
     const licenseId = document.getElementById('license-id');
@@ -209,9 +186,6 @@
         downloadLink.href = canvas.toDataURL('image/png');
       });
     });
-
-    // Show home by default
-    showSection('hero');
   </script>
 </body>
 </html>
