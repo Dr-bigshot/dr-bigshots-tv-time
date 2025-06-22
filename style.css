@@ -122,7 +122,7 @@
       <a href="#hero">Home</a>
       <a href="#about">About</a>
       <a href="#license">TV TIME License</a>
-      <a href="Sign up">Contestants</a>
+      <a href="#signup">Contestants</a>
     </nav>
   </header>
 
@@ -131,10 +131,10 @@
     <p>Get ready for fun, madness, and TV Time with Dr. Bigshot!</p>
   </section>
 
-  <section id="Sign up">
-    <h2>Click the link below to sign up for a chance to be on an episode of my show!</h2>
-    <p>https://forms.gle/6sneUmpxGdBfWokZ7</p>
-  </section>
+ <section id="signup">
+  <h2>Click the link below to sign up for a chance to be on an episode of my show!</h2>
+  <p><a href="https://forms.gle/6sneUmpxGdBfWokZ7" target="_blank">Click here to sign up via Google Form</a></p>
+</section>
 
   <section id="about">
     <h2>About the Show</h2>
