@@ -18,26 +18,6 @@
     </nav>
   </header>
 
-  <section id="license">
-  <h2>Your Official TV TIME License</h2>
-  <p>Congratulations! You are now an official fan of Dr. Bigshot's TV TIME!</p>
-
-  <div class="license-card">
-    <h3>Dr. Bigshot's TV TIME License</h3>
-    <p><strong>Name:</strong> <span id="fan-name">[Your Name Here]</span></p>
-    <p><strong>License ID:</strong> <span id="license-id">#000123</span></p>
-    <p><em>Issued: June 2025</em></p>
-    <p>Welcome to the craziest TV fan club around!</p>
-  </div>
-
-  <label for="name-input">Enter your name to personalize your license:</label><br />
-  <input type="text" id="name-input" placeholder="Your Name" />
-  <button id="generate-license">Generate License</button>
-
-  <br /><br />
-  <a id="download-license" href="#" download="tv-time-license.png" style="display:none;">Download License Image</a>
-</section>
-
   <section id="hero">
     <h2>Welcome to the craziest TV show in town!</h2>
     <p>Get ready for fun, madness, and TV Time with Dr. Bigshot!</p>
@@ -45,11 +25,60 @@
 
   <section id="about">
     <h2>About the Show</h2>
-    <p>Dr. Bigshot brings you the wildest and weirdest TV experience!</p>
+    <p>Dr. Bigshot brings you the wildest and weirdest TV experience inspired by Mr. Antenna TV Time!</p>
+  </section>
+
+  <!-- TV TIME License Section -->
+  <section id="license">
+    <h2>Your Official TV TIME License</h2>
+    <p>Congratulations! You are now an official fan of Dr. Bigshot's TV TIME!</p>
+
+    <div class="license-card">
+      <h3>Dr. Bigshot's TV TIME License</h3>
+      <p><strong>Name:</strong> <span id="fan-name">[Your Name Here]</span></p>
+      <p><strong>License ID:</strong> <span id="license-id">#000123</span></p>
+      <p><em>Issued: June 2025</em></p>
+      <p>Welcome to the craziest TV fan club around!</p>
+    </div>
+
+    <label for="name-input">Enter your name to personalize your license:</label><br />
+    <input type="text" id="name-input" placeholder="Your Name" />
+    <button id="generate-license">Generate License</button>
+
+    <br /><br />
+    <a id="download-license" href="#" download="tv-time-license.png" style="display:none;">Download License Image</a>
   </section>
 
   <footer>
-    <p>© 2023-2025 Dr. Bigshot's TV TIME! All rights reserved.</p>
+    <p>© 2025 Dr. Bigshot's TV TIME! All rights reserved.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    const nameInput = document.getElementById('name-input');
+    const fanName = document.getElementById('fan-name');
+    const licenseId = document.getElementById('license-id');
+    const generateBtn = document.getElementById('generate-license');
+    const downloadLink = document.getElementById('download-license');
+
+    function generateRandomId() {
+      return '#' + Math.floor(100000 + Math.random() * 900000);
+    }
+
+    generateBtn.addEventListener('click', () => {
+      const name = nameInput.value.trim();
+      if(name === '') {
+        alert('Please enter your name to generate your license!');
+        return;
+      }
+      fanName.textContent = name;
+      licenseId.textContent = generateRandomId();
+      downloadLink.style.display = 'inline-block';
+
+      html2canvas(document.querySelector('.license-card')).then(canvas => {
+        downloadLink.href = canvas.toDataURL('image/png');
+      });
+    });
+  </script>
 </body>
 </html>
